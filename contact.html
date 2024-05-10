@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>About -MY portfolio</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+
+      <h1 class="logo me-auto me-lg-0"><a href="index.html">Bincy das L</a></h1>
+
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a class="active" href="about.html">About</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+      <div class="header-social-links">
+        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+      </div>
+
+    </div>
+
+  </header><!-- End Header -->
+<style>
+    .error {
+        color: red;
+    }
+</style>
+</head>
+
+<body>
+    <!-- form validation -->
+   
+    <form action="https://api.web3forms.com/submit" method="post" id="myForm" onsubmit="return validateForm()">
+        <input type="hidden" name="access_key" value="e547c8c6-b665-4871-8c7d-303921b6a309">
+        <h2>Contact Me</h2>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br>
+        <span id="nameError" class="error"></span><br>
+
+        <label for="email">Email:</label>
+        <input type="text" placeholder="message" id="email" name="email"><br>
+        <span id="emailError" class="error"></span><br>
+
+       
+        <textarea id="message" name="message"></textarea><br>
+        <span id="messageError" class="error"></span><br>
+
+        <input type="submit" value="Submit">
+    </form>
+    <!-- java script -->
+    <script>
+
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var message = document.getElementById("message").value;
+            var nameError = document.getElementById("nameError");
+            var emailError = document.getElementById("emailError");
+            var messageError = document.getElementById("messageError");
+            var isValid = true;
+
+            nameError.innerHTML = "";
+            emailError.innerHTML = "";
+            messageError.innerHTML = "";
+
+            if (name === "") {
+                nameError.innerHTML = "Name is required";
+                isValid = false;
+            }
+
+            if (email === "") {
+                emailError.innerHTML = "Email is required";
+                isValid = false;
+            } else if (!validateEmail(email)) {
+                emailError.innerHTML = "Invalid email address";
+                isValid = false;
+            }
+
+            if (message === "") {
+                messageError.innerHTML = "Message is required";
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        function validateEmail(email) {
+            var re = /^([a-zA-Z0-9]+)@([a-z A-Z]+)\.([a-z]+)$/;
+            return re.test(email);
+        }
+    </script>
+
+</body>
+
+</html>
